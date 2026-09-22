@@ -11,6 +11,8 @@ app_version = "2.1.0"
 
 required_apps = ["erpnext"]
 
+fixtures = ["Workflow State", "Workflow"]
+
 after_install = "anyadha_pmo.install.after_install"
 after_migrate = "anyadha_pmo.install.after_migrate"
 
