@@ -32,3 +32,11 @@ add_to_apps_screen = [
         "sequence_id": 10,
     }
 ]
+
+before_request = [
+    "anyadha_pmo.overrides.purchase_order.apply",
+]
+
+override_doctype_class = {
+    "Purchase Order": "anyadha_pmo.overrides.purchase_order.CustomPurchaseOrder",
+}
