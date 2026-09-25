@@ -1,236 +1,265 @@
 {
-  "doctype": "DocType",
-  "name": "PMO Project",
-  "module": "Project Management",
-  "custom": 0,
-  "istable": 0,
-  "editable_grid": 0,
-  "engine": "InnoDB",
-  "track_changes": 1,
-  "fields": [
-    {
-      "fieldname": "project_title",
-      "label": "Project Title",
-      "fieldtype": "Data",
-      "reqd": 1
-    },
-    {
-      "fieldname": "project_code",
-      "label": "Project Code",
-      "fieldtype": "Data"
-    },
-    {
-      "fieldname": "company",
-      "label": "Company",
-      "fieldtype": "Link",
-      "options": "Company"
-    },
-    {
-      "fieldname": "erpnext_project",
-      "label": "ERPNext Project",
-      "fieldtype": "Link",
-      "options": "Project"
-    },
-    {
-      "fieldname": "program",
-      "label": "Programme",
-      "fieldtype": "Link",
-      "options": "PMO Program"
-    },
-    {
-      "fieldname": "portfolio",
-      "label": "Portfolio",
-      "fieldtype": "Link",
-      "options": "PMO Portfolio"
-    },
-    {
-      "fieldname": "project_type",
-      "label": "Project Type",
-      "fieldtype": "Link",
-      "options": "PMO Project Type"
-    },
-    {
-      "fieldname": "category",
-      "label": "Project Category",
-      "fieldtype": "Link",
-      "options": "PMO Project Category"
-    },
-    {
-      "fieldname": "funding_source",
-      "label": "Funding Source",
-      "fieldtype": "Link",
-      "options": "PMO Funding Source"
-    },
-    {
-      "fieldname": "donor",
-      "label": "Donor",
-      "fieldtype": "Link",
-      "options": "PMO Donor"
-    },
-    {
-      "fieldname": "geographic_area",
-      "label": "Geographic Area",
-      "fieldtype": "Link",
-      "options": "PMO Geographic Area"
-    },
-    {
-      "fieldname": "project_manager",
-      "label": "Project Manager",
-      "fieldtype": "Link",
-      "options": "Employee"
-    },
-    {
-      "fieldname": "start_date",
-      "label": "Start Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "end_date",
-      "label": "End Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "approved_budget",
-      "label": "Approved Budget",
-      "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "actual_cost",
-      "label": "Actual Cost",
-      "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
-    },
-    {
-      "fieldname": "description",
-      "label": "Description",
-      "fieldtype": "Small Text"
-    },
-    {
-      "fieldname": "entity",
-      "label": "PMO Entity",
-      "fieldtype": "Link",
-      "options": "PMO Entity"
-    },
-    {
-      "fieldname": "business_unit",
-      "label": "Business Unit",
-      "fieldtype": "Link",
-      "options": "PMO Business Unit"
-    },
-    {
-      "fieldname": "project_type_name",
-      "label": "Project Type Name",
-      "fieldtype": "Data",
-      "hidden": 1
-    },
-    {
-      "fieldname": "priority",
-      "label": "Priority",
-      "fieldtype": "Select",
-      "options": "Low\nMedium\nHigh\nCritical",
-      "default": "Medium"
-    },
-    {
-      "fieldname": "percent_complete",
-      "label": "Percent Complete",
-      "fieldtype": "Percent",
-      "default": "0"
-    },
-    {
-      "fieldname": "currency",
-      "label": "Currency",
-      "fieldtype": "Link",
-      "options": "Currency"
-    },
-    {
-      "fieldname": "approved_on",
-      "label": "Approved On",
-      "fieldtype": "Datetime"
-    },
-    {
-      "fieldname": "approved_by",
-      "label": "Approved By",
-      "fieldtype": "Link",
-      "options": "User"
-    },
-    {
-      "fieldname": "workflow_state",
-      "label": "Workflow State",
-      "fieldtype": "Data",
-      "read_only": 1
-    }
-  ],
-  "permissions": [
-    {
-      "role": "PMO Administrator",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "PMO Head",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "Programme Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "Project Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "PMO Officer",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 1
-    }
-  ]
+ "actions": [],
+ "creation": "2026-09-21 18:41:36.749023",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_title",
+  "project_code",
+  "company",
+  "erpnext_project",
+  "program",
+  "portfolio",
+  "project_type",
+  "category",
+  "funding_source",
+  "donor",
+  "geographic_area",
+  "project_manager",
+  "start_date",
+  "end_date",
+  "approved_budget",
+  "actual_cost",
+  "status",
+  "description",
+  "entity",
+  "business_unit",
+  "project_type_name",
+  "priority",
+  "percent_complete",
+  "currency",
+  "approved_on",
+  "approved_by",
+  "workflow_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Data",
+   "label": "Project Code"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "erpnext_project",
+   "fieldtype": "Link",
+   "label": "ERPNext Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "program",
+   "fieldtype": "Link",
+   "label": "Programme",
+   "options": "PMO Program"
+  },
+  {
+   "fieldname": "portfolio",
+   "fieldtype": "Link",
+   "label": "Portfolio",
+   "options": "PMO Portfolio"
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Link",
+   "label": "Project Type",
+   "options": "PMO Project Type"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Project Category",
+   "options": "PMO Project Category"
+  },
+  {
+   "fieldname": "funding_source",
+   "fieldtype": "Link",
+   "label": "Funding Source",
+   "options": "PMO Funding Source"
+  },
+  {
+   "fieldname": "donor",
+   "fieldtype": "Link",
+   "label": "Donor",
+   "options": "PMO Donor"
+  },
+  {
+   "fieldname": "geographic_area",
+   "fieldtype": "Link",
+   "label": "Geographic Area",
+   "options": "PMO Geographic Area"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "approved_budget",
+   "fieldtype": "Currency",
+   "label": "Approved Budget"
+  },
+  {
+   "fieldname": "actual_cost",
+   "fieldtype": "Currency",
+   "label": "Actual Cost"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Link",
+   "label": "PMO Entity",
+   "options": "PMO Entity"
+  },
+  {
+   "fieldname": "business_unit",
+   "fieldtype": "Link",
+   "label": "Business Unit",
+   "options": "PMO Business Unit"
+  },
+  {
+   "fieldname": "project_type_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Project Type Name"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "default": "0",
+   "fieldname": "percent_complete",
+   "fieldtype": "Percent",
+   "label": "Percent Complete"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "label": "Workflow State",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-24 22:02:14.197535",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "PMO Project",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PMO Administrator",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PMO Head",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Programme Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Project Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PMO Officer",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "project_title",
+ "track_changes": 1
 }

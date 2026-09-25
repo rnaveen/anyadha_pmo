@@ -1,107 +1,117 @@
 {
-  "doctype": "DocType",
-  "name": "PMO CSR Agreement",
-  "module": "CSR Management",
-  "custom": 0,
-  "istable": 0,
-  "editable_grid": 0,
-  "engine": "InnoDB",
-  "track_changes": 1,
-  "fields": [
-    {
-      "fieldname": "partner",
-      "label": "CSR Partner",
-      "fieldtype": "Link",
-      "options": "PMO CSR Partner"
-    },
-    {
-      "fieldname": "agreement_no",
-      "label": "Agreement No",
-      "fieldtype": "Data"
-    },
-    {
-      "fieldname": "agreement_date",
-      "label": "Agreement Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "project",
-      "label": "Project",
-      "fieldtype": "Link",
-      "options": "PMO Project"
-    },
-    {
-      "fieldname": "amount",
-      "label": "Amount",
-      "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "agreement_file",
-      "label": "Agreement File",
-      "fieldtype": "Attach"
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "PMO Administrator",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "PMO Head",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "CSR Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "Programme Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 0,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 0
-    },
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1,
-      "print": 1,
-      "email": 1,
-      "export": 1,
-      "share": 1
-    }
-  ]
+ "actions": [],
+ "creation": "2026-09-06 18:14:44.784691",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partner",
+  "agreement_no",
+  "agreement_date",
+  "project",
+  "amount",
+  "agreement_file",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "partner",
+   "fieldtype": "Link",
+   "label": "CSR Partner",
+   "options": "PMO CSR Partner"
+  },
+  {
+   "fieldname": "agreement_no",
+   "fieldtype": "Data",
+   "label": "Agreement No"
+  },
+  {
+   "fieldname": "agreement_date",
+   "fieldtype": "Date",
+   "label": "Agreement Date"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "PMO Project"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "agreement_file",
+   "fieldtype": "Attach",
+   "label": "Agreement File"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-25 10:21:18.288525",
+ "modified_by": "Administrator",
+ "module": "CSR Management",
+ "name": "PMO CSR Agreement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PMO Administrator",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PMO Head",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CSR Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Programme Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "agreement_no",
+ "track_changes": 1
 }
