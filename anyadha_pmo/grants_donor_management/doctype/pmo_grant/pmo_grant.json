@@ -7,18 +7,69 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "grant_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "grant_name,agreement_type,company,funding_party,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "field_order": [
+    "grant_name",
+    "agreement_type",
+    "company",
+    "funding_party",
+    "funding_source",
+    "proposal",
+    "contracted_total",
+    "start_date",
+    "end_date",
+    "status",
+    "section_legal",
+    "agreement_no",
+    "signed_date",
+    "agreement_file",
+    "reporting_frequency",
+    "section_projects",
+    "projects",
+    "section_conditions",
+    "conditions",
+    "donor",
+    "project",
+    "grant_amount"
+  ],
   "fields": [
     {
       "fieldname": "grant_name",
-      "label": "Grant Name",
+      "label": "Agreement Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
     },
     {
-      "fieldname": "donor",
-      "label": "Donor",
+      "fieldname": "agreement_type",
+      "label": "Agreement Type",
+      "fieldtype": "Select",
+      "options": "Grant\nCSR\nGovernment\nCommercial",
+      "reqd": 1,
+      "default": "Grant",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
       "fieldtype": "Link",
-      "options": "PMO Donor"
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "funding_party",
+      "label": "Funding Party",
+      "fieldtype": "Link",
+      "options": "PMO Donor",
+      "reqd": 1,
+      "in_list_view": 1
     },
     {
       "fieldname": "funding_source",
@@ -27,15 +78,16 @@
       "options": "PMO Funding Source"
     },
     {
-      "fieldname": "project",
-      "label": "Project",
+      "fieldname": "proposal",
+      "label": "Proposal",
       "fieldtype": "Link",
-      "options": "PMO Project"
+      "options": "PMO Proposal"
     },
     {
-      "fieldname": "grant_amount",
-      "label": "Grant Amount",
-      "fieldtype": "Currency"
+      "fieldname": "contracted_total",
+      "label": "Contracted Total",
+      "fieldtype": "Currency",
+      "in_list_view": 1
     },
     {
       "fieldname": "start_date",
@@ -51,7 +103,81 @@
       "fieldname": "status",
       "label": "Status",
       "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_legal",
+      "label": "Legal / Attachments",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "agreement_no",
+      "label": "Agreement No",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "signed_date",
+      "label": "Signed Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "agreement_file",
+      "label": "Agreement File",
+      "fieldtype": "Attach"
+    },
+    {
+      "fieldname": "reporting_frequency",
+      "label": "Reporting Frequency",
+      "fieldtype": "Select",
+      "options": "Monthly\nQuarterly\nHalf-Yearly\nAnnual\nAs Per Agreement"
+    },
+    {
+      "fieldname": "section_projects",
+      "label": "Projects",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "projects",
+      "label": "Projects",
+      "fieldtype": "Table",
+      "options": "PMO Agreement Project Link"
+    },
+    {
+      "fieldname": "section_conditions",
+      "label": "Conditions",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "conditions",
+      "label": "Conditions",
+      "fieldtype": "Table",
+      "options": "PMO Agreement Condition"
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor (legacy)",
+      "fieldtype": "Link",
+      "options": "PMO Donor",
+      "hidden": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "project",
+      "label": "Project (legacy)",
+      "fieldtype": "Link",
+      "options": "PMO Project",
+      "hidden": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "grant_amount",
+      "label": "Grant Amount (legacy)",
+      "fieldtype": "Currency",
+      "hidden": 1,
+      "read_only": 1
     }
   ],
   "permissions": [
@@ -79,6 +205,17 @@
     },
     {
       "role": "Grants Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "email": 1,
+      "export": 1,
+      "share": 0
+    },
+    {
+      "role": "CSR Manager",
       "read": 1,
       "write": 1,
       "create": 1,

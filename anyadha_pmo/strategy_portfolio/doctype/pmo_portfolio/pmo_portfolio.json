@@ -36,13 +36,17 @@
       "fieldname": "company",
       "label": "Company",
       "fieldtype": "Link",
-      "options": "Company"
+      "options": "Company",
+      "reqd": 1,
+      "in_standard_filter": 1
     },
     {
       "fieldname": "entity",
-      "label": "PMO Entity",
+      "label": "PMO Entity (legacy)",
       "fieldtype": "Link",
-      "options": "PMO Entity"
+      "options": "PMO Entity",
+      "hidden": 1,
+      "read_only": 1
     },
     {
       "fieldname": "business_unit",

@@ -1,0 +1,49 @@
+{
+  "doctype": "DocType",
+  "name": "PMO Funding Party Contact",
+  "module": "PMO Masters",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "contact_name",
+      "label": "Contact Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "email",
+      "label": "Email",
+      "fieldtype": "Data",
+      "options": "Email",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "phone",
+      "label": "Phone",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "role",
+      "label": "Role",
+      "fieldtype": "Select",
+      "options": "Finance\nProgram\nOther",
+      "default": "Other",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_primary",
+      "label": "Primary",
+      "fieldtype": "Check",
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [],
+  "sort_field": "idx",
+  "sort_order": "ASC"
+}

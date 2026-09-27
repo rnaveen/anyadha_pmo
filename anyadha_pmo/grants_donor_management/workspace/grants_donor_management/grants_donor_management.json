@@ -1,7 +1,7 @@
 {
   "app": "anyadha_pmo",
   "charts": [],
-  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Grants and Donor Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO Grants and Donor Management workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}}]",
+  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Grants and Donor Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Agreements with type Grant. Use Funding Party and Project budget/deliverables on the shared spine.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}},{\"id\":\"anyadha_ql\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Grant Agreements\",\"col\":4}}]",
   "creation": "2026-08-25 00:00:00.000000",
   "custom_blocks": [],
   "docstatus": 0,
@@ -35,7 +35,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "Donor Report",
       "link_count": 0,
@@ -59,7 +59,18 @@
       "dependencies": "",
       "hidden": 0,
       "is_query_report": 0,
-      "label": "Grant",
+      "label": "Funding Party",
+      "link_count": 0,
+      "link_to": "PMO Donor",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Agreement",
       "link_count": 0,
       "link_to": "PMO Grant",
       "link_type": "DocType",
@@ -68,7 +79,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "Grant Agreement",
       "link_count": 0,
@@ -101,7 +112,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "Grant Reporting",
       "link_count": 0,
@@ -134,11 +145,22 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "Utilization Certificate",
       "link_count": 0,
       "link_to": "PMO Utilization Certificate",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Deliverable",
+      "link_count": 0,
+      "link_to": "PMO Project Deliverable",
       "link_type": "DocType",
       "onboard": 1,
       "type": "Link"
@@ -153,7 +175,13 @@
   "owner": "Administrator",
   "parent_page": "",
   "public": 1,
-  "quick_lists": [],
+  "quick_lists": [
+    {
+      "document_type": "PMO Grant",
+      "label": "Grant Agreements",
+      "quick_list_filter": "[[\"agreement_type\",\"=\",\"Grant\"]]"
+    }
+  ],
   "restrict_to_domain": "",
   "roles": [
     {

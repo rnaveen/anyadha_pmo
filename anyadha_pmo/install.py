@@ -23,9 +23,33 @@ def ensure_roles():
     frappe.db.commit()
 
 
+def ensure_u3_labels():
+    """Desk labels for canonical DocTypes that keep legacy technical names."""
+    for source, translated in (
+        ("PMO Grant", "Agreement"),
+        ("PMO Donor", "Funding Party"),
+    ):
+        name = frappe.db.exists(
+            "Translation", {"source_text": source, "language": "en"}
+        )
+        if name:
+            frappe.db.set_value("Translation", name, "translated_text", translated)
+        else:
+            frappe.get_doc(
+                {
+                    "doctype": "Translation",
+                    "language": "en",
+                    "source_text": source,
+                    "translated_text": translated,
+                }
+            ).insert(ignore_permissions=True)
+
+
 def after_install():
     ensure_roles()
+    ensure_u3_labels()
 
 
 def after_migrate():
     ensure_roles()
+    ensure_u3_labels()

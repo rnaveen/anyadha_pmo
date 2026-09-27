@@ -7,28 +7,81 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "autoname": "field:donor_name",
+  "title_field": "donor_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "donor_name,party_type",
+  "field_order": [
+    "donor_name",
+    "party_type",
+    "donor_type",
+    "erpnext_customer",
+    "erpnext_supplier",
+    "section_contacts",
+    "contacts",
+    "contact_person",
+    "email"
+  ],
   "fields": [
     {
       "fieldname": "donor_name",
-      "label": "Donor Name",
+      "label": "Party Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "party_type",
+      "label": "Party Type",
+      "fieldtype": "Select",
+      "options": "Donor\nCSR Partner\nGovernment\nCommercial\nOther",
+      "reqd": 1,
+      "default": "Donor",
+      "in_list_view": 1,
+      "in_standard_filter": 1
     },
     {
       "fieldname": "donor_type",
-      "label": "Donor Type",
+      "label": "Donor Subtype",
       "fieldtype": "Select",
       "options": "Multilateral\nBilateral\nCorporate\nFoundation\nGovernment\nIndividual\nOther"
     },
     {
+      "fieldname": "erpnext_customer",
+      "label": "ERPNext Customer",
+      "fieldtype": "Link",
+      "options": "Customer"
+    },
+    {
+      "fieldname": "erpnext_supplier",
+      "label": "ERPNext Supplier",
+      "fieldtype": "Link",
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "section_contacts",
+      "label": "Contacts",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "contacts",
+      "label": "Contacts",
+      "fieldtype": "Table",
+      "options": "PMO Funding Party Contact"
+    },
+    {
       "fieldname": "contact_person",
-      "label": "Contact Person",
-      "fieldtype": "Data"
+      "label": "Contact Person (legacy)",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "read_only": 1
     },
     {
       "fieldname": "email",
-      "label": "Email",
-      "fieldtype": "Data"
+      "label": "Email (legacy)",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "read_only": 1
     }
   ],
   "permissions": [
@@ -77,6 +130,28 @@
       "share": 0
     },
     {
+      "role": "Grants Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "email": 1,
+      "export": 1,
+      "share": 0
+    },
+    {
+      "role": "CSR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "email": 1,
+      "export": 1,
+      "share": 0
+    },
+    {
       "role": "System Manager",
       "read": 1,
       "write": 1,
@@ -87,6 +162,5 @@
       "export": 1,
       "share": 1
     }
-  ],
-  "autoname": "field:donor_name"
+  ]
 }

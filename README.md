@@ -19,13 +19,23 @@ Anyadha Enterprise PMO application for Frappe Framework v16+ and ERPNext v16+.
 13. SOP Document Control
 14. Performance MIS
 
-The existing PMO DocTypes are preserved. Foundation work is separated from business-process implementation.
+**Funding spine (U3):** one Agreement DocType (`PMO Grant`, desk label Agreement) with `agreement_type`; Project holds budget and funder child lines; Deliverable is the unified reporting artifact. Grants/CSR desks filter by type. See `docs/USER_MANUAL.md`.
 
 ## v16 navigation
 
-Public Workspaces are shipped under `anyadha_pmo/workspace/`.
+Public Workspaces are shipped under `anyadha_pmo/` module `workspace/` folders.
 Curated v16 Workspace Sidebar records are shipped under `anyadha_pmo/workspace_sidebar/`.
 
 ## Dependencies
 
 ERPNext is required. India Compliance, HRMS, Raven, Agriculture and other apps remain optional integrations.
+
+## Local migrate (test bench)
+
+After pulling this branch on the **test** bench only:
+
+```bash
+bench --site <test-site> migrate
+```
+
+Do not migrate prod until the test demo passes.

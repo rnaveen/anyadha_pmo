@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "PMO Project Funder Line",
+  "module": "Project Management",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "funding_party",
+      "label": "Funding Party",
+      "fieldtype": "Link",
+      "options": "PMO Donor",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "contribution_type",
+      "label": "Contribution Type",
+      "fieldtype": "Select",
+      "options": "External\nOwn Contribution\nGroup Company\nOther",
+      "default": "External",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "label": "Amount",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "restriction_note",
+      "label": "Restriction Note",
+      "fieldtype": "Small Text",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "funding_source",
+      "label": "Funding Source",
+      "fieldtype": "Link",
+      "options": "PMO Funding Source"
+    }
+  ],
+  "permissions": [],
+  "sort_field": "idx",
+  "sort_order": "ASC"
+}

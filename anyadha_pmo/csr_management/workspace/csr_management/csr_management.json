@@ -1,7 +1,7 @@
 {
   "app": "anyadha_pmo",
   "charts": [],
-  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>CSR Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO CSR Management workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}}]",
+  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>CSR Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Agreements with type CSR on the shared Agreement DocType. Do not create the old CSR Agreement twin.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}},{\"id\":\"anyadha_ql\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"CSR Agreements\",\"col\":4}}]",
   "creation": "2026-08-25 00:00:00.000000",
   "custom_blocks": [],
   "docstatus": 0,
@@ -26,9 +26,20 @@
       "dependencies": "",
       "hidden": 0,
       "is_query_report": 0,
-      "label": "CSR Agreement",
+      "label": "Funding Party",
       "link_count": 0,
-      "link_to": "PMO CSR Agreement",
+      "link_to": "PMO Donor",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Agreement",
+      "link_count": 0,
+      "link_to": "PMO Grant",
       "link_type": "DocType",
       "onboard": 1,
       "type": "Link"
@@ -68,7 +79,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "CSR Partner",
       "link_count": 0,
@@ -79,7 +90,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "CSR Project",
       "link_count": 0,
@@ -101,7 +112,7 @@
     },
     {
       "dependencies": "",
-      "hidden": 0,
+      "hidden": 1,
       "is_query_report": 0,
       "label": "CSR Report",
       "link_count": 0,
@@ -120,6 +131,17 @@
       "link_type": "DocType",
       "onboard": 1,
       "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Deliverable",
+      "link_count": 0,
+      "link_to": "PMO Project Deliverable",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
     }
   ],
   "modified": "2026-09-01 13:07:38.470992",
@@ -131,7 +153,13 @@
   "owner": "Administrator",
   "parent_page": "",
   "public": 1,
-  "quick_lists": [],
+  "quick_lists": [
+    {
+      "document_type": "PMO Grant",
+      "label": "CSR Agreements",
+      "quick_list_filter": "[[\"agreement_type\",\"=\",\"CSR\"]]"
+    }
+  ],
   "restrict_to_domain": "",
   "roles": [
     {
