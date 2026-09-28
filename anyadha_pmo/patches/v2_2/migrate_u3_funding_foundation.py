@@ -35,6 +35,7 @@ def _migrate_agreements():
 			if not exists:
 				doc = frappe.get_doc("PMO Grant", row.name)
 				doc.append("projects", {"project": row.project})
+				doc.flags.ignore_mandatory = True
 				doc.save(ignore_permissions=True)
 
 
@@ -71,6 +72,7 @@ def _migrate_funding_parties():
 				"is_primary": 1,
 			},
 		)
+		doc.flags.ignore_mandatory = True
 		doc.save(ignore_permissions=True)
 
 
@@ -120,4 +122,5 @@ def _migrate_project_budgets():
 					"currency": line.currency,
 				},
 			)
+		doc.flags.ignore_mandatory = True
 		doc.save(ignore_permissions=True)

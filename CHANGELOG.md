@@ -23,4 +23,5 @@
 ### Internal
 
 - Patch `migrate_u3_funding_foundation` copies legacy donor/project/amount and standalone budget rows into U3 fields
+- Patch `migrate_u3_funding_foundation` ignores mandatory on legacy Agreement/Donor/Project saves so migrate completes on sparse data
 
