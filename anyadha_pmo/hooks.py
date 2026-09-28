@@ -24,6 +24,8 @@ app_home = "/desk/executive-pmo"
 
 web_include_js = ["/assets/anyadha_pmo/js/supplier_rfq_quotation.js"]
 
+app_include_js = ["/assets/anyadha_pmo/js/pmo_case_hub.js"]
+
 add_to_apps_screen = [
     {
         "name": app_name,

@@ -9,6 +9,7 @@
 - Unified Deliverable fields on `PMO Project Deliverable` (type, reviewer, status, attachment, overdue)
 - Funding Party shape on `PMO Donor` (party type, ERPNext Customer/Supplier links, contacts child)
 - Child DocTypes: Agreement Project Link, Agreement Condition, Funding Party Contact
+- Case hub on Agreement (status strip + Case create-next); thin Proposal promote and Project link/create Agreement strips
 
 ### Changed
 

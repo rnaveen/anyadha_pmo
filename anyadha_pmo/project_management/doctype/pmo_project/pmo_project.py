@@ -60,3 +60,68 @@ class PMOProject(Document):
 			utilized = flt(row.utilized_amount)
 			row.variance = approved - utilized
 			row.variance_percent = (row.variance / approved * 100) if approved else 0
+
+
+@frappe.whitelist()
+def get_agreement_for_project(project):
+	frappe.has_permission("PMO Project", "read", project, throw=True)
+	agreement_name = frappe.db.get_value(
+		"PMO Agreement Project Link",
+		{"project": project, "parenttype": "PMO Grant"},
+		"parent",
+	)
+	if not agreement_name:
+		return None
+	return frappe.db.get_value(
+		"PMO Grant",
+		agreement_name,
+		["name", "grant_name", "agreement_type", "status", "company"],
+		as_dict=True,
+	)
+
+
+@frappe.whitelist()
+def link_project_to_agreement(project, agreement):
+	frappe.has_permission("PMO Project", "write", project, throw=True)
+	frappe.has_permission("PMO Grant", "write", agreement, throw=True)
+
+	project_company = frappe.db.get_value("PMO Project", project, "company")
+	agreement_doc = frappe.get_doc("PMO Grant", agreement)
+	if project_company and agreement_doc.company and project_company != agreement_doc.company:
+		frappe.throw("Project Company must match Agreement Company.")
+
+	if any(row.project == project for row in agreement_doc.projects):
+		return agreement
+
+	agreement_doc.append("projects", {"project": project})
+	agreement_doc.save()
+	return agreement
+
+
+@frappe.whitelist()
+def make_agreement_from_project(project, grant_name, agreement_type, funding_party):
+	frappe.has_permission("PMO Project", "write", project, throw=True)
+	frappe.has_permission("PMO Grant", "create", throw=True)
+
+	existing = get_agreement_for_project(project)
+	if existing:
+		frappe.throw(f"Project is already linked to Agreement {existing.name}.")
+
+	project_doc = frappe.get_doc("PMO Project", project)
+	if not project_doc.company:
+		frappe.throw("Project must have a Company before creating an Agreement.")
+
+	agreement = frappe.get_doc(
+		{
+			"doctype": "PMO Grant",
+			"grant_name": grant_name or project_doc.project_title,
+			"agreement_type": agreement_type or "Grant",
+			"company": project_doc.company,
+			"funding_party": funding_party,
+			"status": "Draft",
+			"funding_source": project_doc.funding_source,
+			"projects": [{"project": project}],
+		}
+	)
+	agreement.insert()
+	return agreement.name
