@@ -14,6 +14,7 @@
 
 - Grants / CSR workspaces point at typed Agreement lists; dormant twin create removed for normal roles
 - Portfolio Company required; Entity hidden on Portfolio / Project live path
+- Agreement, Proposal, and Deliverable forms use multi-column functional sections
 
 ### Fixed
 
@@ -22,3 +23,4 @@
 ### Internal
 
 - Patch `migrate_u3_funding_foundation` copies legacy donor/project/amount and standalone budget rows into U3 fields
+

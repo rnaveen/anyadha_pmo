@@ -12,19 +12,29 @@
   "sort_field": "modified",
   "sort_order": "DESC",
   "field_order": [
+    "section_deliverable",
     "project",
     "deliverable",
     "deliverable_type",
-    "due_date",
-    "responsible",
-    "reviewer",
+    "column_break_deliverable",
     "status",
+    "due_date",
     "is_overdue",
+    "section_ownership",
+    "responsible",
+    "column_break_ownership",
+    "reviewer",
+    "section_evidence",
     "attachment",
     "remarks",
     "acceptance_status"
   ],
   "fields": [
+    {
+      "fieldname": "section_deliverable",
+      "label": "Deliverable",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "project",
       "label": "Project",
@@ -52,22 +62,8 @@
       "in_standard_filter": 1
     },
     {
-      "fieldname": "due_date",
-      "label": "Due Date",
-      "fieldtype": "Date",
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "responsible",
-      "label": "Owner",
-      "fieldtype": "Link",
-      "options": "Employee"
-    },
-    {
-      "fieldname": "reviewer",
-      "label": "Reviewer",
-      "fieldtype": "Link",
-      "options": "User"
+      "fieldname": "column_break_deliverable",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "status",
@@ -79,10 +75,42 @@
       "in_standard_filter": 1
     },
     {
+      "fieldname": "due_date",
+      "label": "Due Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    },
+    {
       "fieldname": "is_overdue",
       "label": "Overdue",
       "fieldtype": "Check",
       "read_only": 1
+    },
+    {
+      "fieldname": "section_ownership",
+      "label": "Ownership",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "responsible",
+      "label": "Owner",
+      "fieldtype": "Link",
+      "options": "Employee"
+    },
+    {
+      "fieldname": "column_break_ownership",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reviewer",
+      "label": "Reviewer",
+      "fieldtype": "Link",
+      "options": "User"
+    },
+    {
+      "fieldname": "section_evidence",
+      "label": "Evidence",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "attachment",

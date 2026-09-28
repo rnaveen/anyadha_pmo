@@ -7,7 +7,25 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "field_order": [
+    "section_proposal",
+    "proposal_title",
+    "opportunity",
+    "column_break_proposal",
+    "status",
+    "project_type",
+    "section_ask",
+    "donor",
+    "requested_amount",
+    "section_description",
+    "description"
+  ],
   "fields": [
+    {
+      "fieldname": "section_proposal",
+      "label": "Proposal",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "proposal_title",
       "label": "Proposal Title",
@@ -21,10 +39,25 @@
       "options": "PMO Opportunity"
     },
     {
+      "fieldname": "column_break_proposal",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+    },
+    {
       "fieldname": "project_type",
       "label": "Project Type",
       "fieldtype": "Link",
       "options": "PMO Project Type"
+    },
+    {
+      "fieldname": "section_ask",
+      "label": "Ask",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "donor",
@@ -38,10 +71,9 @@
       "fieldtype": "Currency"
     },
     {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "fieldname": "section_description",
+      "label": "Description",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "description",
