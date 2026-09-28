@@ -53,6 +53,35 @@ From an Agreement, **Case → Create Deliverable** picks a linked Project when m
 3. The new Agreement keeps the Proposal link and copies donor / amount.
 4. If an Agreement already exists, **Open Agreement** (or Agreements) from the Proposal.
 
+## Strategy
+
+1. Open **Strategy and Portfolio**.
+2. Create a **Strategic Plan** for one **Company**.
+3. Optionally link a **Parent Strategic Plan** (for example a holding Company plan). You can save without a parent.
+4. Add **Strategic Initiatives** under the plan — they must use the same Company as the plan.
+
+## Portfolio and nesting
+
+- A **Portfolio** belongs to one Company.
+- On a **Project**, set **Portfolio** to nest it. **Programme** is optional.
+- Open the Portfolio to see linked Projects for that Company.
+
+## Outcomes and Performance
+
+Open **Outcomes and Performance** for metrics, optional impact tools, and management MIS.
+
+1. Use **Indicator** / **KPI** (and their readings) for what you measure — both appear until a later merge.
+2. Use impact tools (frameworks, baseline, visits, evaluations) only when the work needs them.
+3. Use management reviews and MIS snapshots for performance reporting.
+
+Do **not** use GRC Review as a day-to-day Outcomes substitute — that stays for assurance and compliance-style reviews.
+
+The old **Monitoring and Evaluation** and **Performance MIS** desks are hidden; use Outcomes and Performance instead.
+
+## Forms
+
+Desk forms group fields by job in multiple columns: identity and status, nesting (portfolio / programme), classification, schedule and ownership, finance, then tables (budget, funders, contacts, conditions).
+
 ## What not to use day-to-day
 
 These remain in the system for history but normal users should not create new ones:

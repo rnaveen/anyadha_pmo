@@ -1,3 +1,7 @@
 frappe.ui.form.on("PMO Strategic Plan", {
-    refresh(frm) {}
+	setup(frm) {
+		frm.set_query("parent_strategic_plan", () => ({
+			filters: frm.doc.name ? { name: ["!=", frm.doc.name] } : {},
+		}));
+	},
 });

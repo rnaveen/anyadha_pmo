@@ -1,17 +1,17 @@
 {
  "app": "anyadha_pmo",
  "charts": [],
- "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>CSR Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO CSR Management workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}}]",
+ "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Grants and Donor Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO Grants and Donor Management workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}}]",
  "creation": "2026-08-25 00:00:00",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "heart",
- "idx": 6,
+ "icon": "handshake",
+ "idx": 5,
  "is_hidden": 0,
- "label": "CSR Management",
+ "label": "Grants and Donor Management",
  "links": [
   {
    "dependencies": "",
@@ -24,44 +24,11 @@
   },
   {
    "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Agreement",
-   "link_count": 0,
-   "link_to": "PMO CSR Agreement",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CSR Budget",
+   "label": "Donor Compliance",
    "link_count": 0,
-   "link_to": "PMO CSR Budget",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Compliance",
-   "link_count": 0,
-   "link_to": "PMO CSR Compliance",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Impact Assessment",
-   "link_count": 0,
-   "link_to": "PMO CSR Impact Assessment",
+   "link_to": "PMO Donor Compliance",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -70,20 +37,9 @@
    "dependencies": "",
    "hidden": 1,
    "is_query_report": 0,
-   "label": "CSR Partner",
+   "label": "Donor Report",
    "link_count": 0,
-   "link_to": "PMO CSR Partner",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Project",
-   "link_count": 0,
-   "link_to": "PMO CSR Project",
+   "link_to": "PMO Donor Report",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -92,20 +48,9 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CSR Proposal",
+   "label": "Fund Reconciliation",
    "link_count": 0,
-   "link_to": "PMO CSR Proposal",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Report",
-   "link_count": 0,
-   "link_to": "PMO CSR Report",
+   "link_to": "PMO Fund Reconciliation",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -114,18 +59,95 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CSR Utilization",
+   "label": "Grant",
    "link_count": 0,
-   "link_to": "PMO CSR Utilization",
+   "link_to": "PMO Grant",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 1,
+   "is_query_report": 0,
+   "label": "Grant Agreement",
+   "link_count": 0,
+   "link_to": "PMO Grant Agreement",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Grant Budget",
+   "link_count": 0,
+   "link_to": "PMO Grant Budget",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Grant Disbursement",
+   "link_count": 0,
+   "link_to": "PMO Grant Disbursement",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 1,
+   "is_query_report": 0,
+   "label": "Grant Reporting",
+   "link_count": 0,
+   "link_to": "PMO Grant Reporting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Grant Utilization",
+   "link_count": 0,
+   "link_to": "PMO Grant Utilization",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Restricted Fund",
+   "link_count": 0,
+   "link_to": "PMO Restricted Fund",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 1,
+   "is_query_report": 0,
+   "label": "Utilization Certificate",
+   "link_count": 0,
+   "link_to": "PMO Utilization Certificate",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
   }
  ],
- "modified": "2026-09-28 08:55:43.060845",
+ "modified": "2026-09-28 08:55:42.874591",
  "modified_by": "Administrator",
- "module": "CSR Management",
- "name": "CSR Management",
+ "module": "Grants Donor Management",
+ "name": "Grants and Donor Management",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -140,11 +162,11 @@
    "role": "PMO Head"
   },
   {
-   "role": "CSR Manager"
+   "role": "Grants Manager"
   }
  ],
- "sequence_id": 6.0,
+ "sequence_id": 5.0,
  "shortcuts": [],
- "title": "CSR Management",
+ "title": "Grants and Donor Management",
  "type": "Workspace"
 }

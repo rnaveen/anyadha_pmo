@@ -12,10 +12,14 @@
   "show_title_field_in_link": 1,
   "search_fields": "donor_name,party_type",
   "field_order": [
+    "section_party",
     "donor_name",
     "party_type",
+    "column_break_party",
     "donor_type",
+    "section_books",
     "erpnext_customer",
+    "column_break_books",
     "erpnext_supplier",
     "section_contacts",
     "contacts",
@@ -23,6 +27,11 @@
     "email"
   ],
   "fields": [
+    {
+      "fieldname": "section_party",
+      "label": "Party",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "donor_name",
       "label": "Party Name",
@@ -41,16 +50,29 @@
       "in_standard_filter": 1
     },
     {
+      "fieldname": "column_break_party",
+      "fieldtype": "Column Break"
+    },
+    {
       "fieldname": "donor_type",
       "label": "Donor Subtype",
       "fieldtype": "Select",
       "options": "Multilateral\nBilateral\nCorporate\nFoundation\nGovernment\nIndividual\nOther"
     },
     {
+      "fieldname": "section_books",
+      "label": "ERPNext books link",
+      "fieldtype": "Section Break"
+    },
+    {
       "fieldname": "erpnext_customer",
       "label": "ERPNext Customer",
       "fieldtype": "Link",
       "options": "Customer"
+    },
+    {
+      "fieldname": "column_break_books",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "erpnext_supplier",
