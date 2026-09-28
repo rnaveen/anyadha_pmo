@@ -1,7 +1,7 @@
 {
   "app": "anyadha_pmo",
   "charts": [],
-  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Performance MIS</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO Performance MIS workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}},{\"id\":\"anyadha_reports_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"anyadha_reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
+  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Performance MIS</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Superseded by <b>Outcomes and Performance</b>. Use that desk for day-to-day M&amp;E and performance work.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}},{\"id\":\"anyadha_reports_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"anyadha_reports_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":12}}]",
   "creation": "2026-08-25 00:00:00.000000",
   "custom_blocks": [],
   "docstatus": 0,
@@ -10,7 +10,7 @@
   "hide_custom": 0,
   "icon": "chart-no-axes-combined",
   "idx": 11,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Performance MIS",
   "links": [
     {
@@ -521,5 +521,6 @@
     }
   ],
   "type": "Workspace",
-  "standard": 1
+  "standard": 1,
+  "title": "Performance MIS"
 }

@@ -1,7 +1,7 @@
 {
   "app": "anyadha_pmo",
   "doctype": "Desktop Icon",
-  "hidden": 0,
+  "hidden": 1,
   "icon": "",
   "icon_type": "Link",
   "label": "Performance MIS",
