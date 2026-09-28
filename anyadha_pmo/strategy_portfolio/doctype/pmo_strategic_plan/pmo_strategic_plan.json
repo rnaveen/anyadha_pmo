@@ -7,57 +7,94 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "plan_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "plan_name,plan_code,company,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "field_order": [
+    "section_identity",
+    "plan_name",
+    "plan_code",
+    "column_break_identity",
+    "company",
+    "status",
+    "section_cascade",
+    "parent_strategic_plan",
+    "column_break_cascade",
+    "version",
+    "section_period",
+    "period_from",
+    "column_break_period",
+    "period_to",
+    "section_org",
+    "business_unit",
+    "column_break_org",
+    "entity",
+    "section_detail",
+    "description",
+    "section_approval",
+    "approved_by",
+    "column_break_approval",
+    "approved_on",
+    "workflow_state"
+  ],
   "fields": [
+    {
+      "fieldname": "section_identity",
+      "label": "Plan",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "plan_name",
       "label": "Plan Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
     },
     {
-      "fieldname": "period_from",
-      "label": "Period From",
-      "fieldtype": "Date"
+      "fieldname": "plan_code",
+      "label": "Plan Code",
+      "fieldtype": "Data",
+      "in_list_view": 1
     },
     {
-      "fieldname": "period_to",
-      "label": "Period To",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
-    },
-    {
-      "fieldname": "description",
-      "label": "Description",
-      "fieldtype": "Small Text"
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "company",
       "label": "Company",
       "fieldtype": "Link",
       "options": "Company",
-      "insert_after": "plan_name"
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
     },
     {
-      "fieldname": "entity",
-      "label": "PMO Entity",
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_cascade",
+      "label": "Parent Strategy (optional)",
+      "fieldtype": "Section Break",
+      "description": "Link to a holding or parent Company plan when cascading. Leave blank for an independent plan."
+    },
+    {
+      "fieldname": "parent_strategic_plan",
+      "label": "Parent Strategic Plan",
       "fieldtype": "Link",
-      "options": "PMO Entity"
+      "options": "PMO Strategic Plan"
     },
     {
-      "fieldname": "business_unit",
-      "label": "Business Unit",
-      "fieldtype": "Link",
-      "options": "PMO Business Unit"
-    },
-    {
-      "fieldname": "plan_code",
-      "label": "Plan Code",
-      "fieldtype": "Data"
+      "fieldname": "column_break_cascade",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "version",
@@ -66,10 +103,73 @@
       "default": "1"
     },
     {
+      "fieldname": "section_period",
+      "label": "Period",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "period_from",
+      "label": "Period From",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "column_break_period",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "period_to",
+      "label": "Period To",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "section_org",
+      "label": "Organisation",
+      "fieldtype": "Section Break",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "business_unit",
+      "label": "Business Unit",
+      "fieldtype": "Link",
+      "options": "PMO Business Unit"
+    },
+    {
+      "fieldname": "column_break_org",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "entity",
+      "label": "PMO Entity (legacy)",
+      "fieldtype": "Link",
+      "options": "PMO Entity",
+      "hidden": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_detail",
+      "label": "Description",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "section_approval",
+      "label": "Approval",
+      "fieldtype": "Section Break",
+      "collapsible": 1
+    },
+    {
       "fieldname": "approved_by",
       "label": "Approved By",
       "fieldtype": "Link",
       "options": "User"
+    },
+    {
+      "fieldname": "column_break_approval",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "approved_on",

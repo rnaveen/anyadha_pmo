@@ -7,12 +7,81 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "initiative_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "initiative_name,company,strategic_plan,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "field_order": [
+    "section_identity",
+    "initiative_name",
+    "strategic_plan",
+    "column_break_identity",
+    "company",
+    "status",
+    "section_alignment",
+    "strategic_objective",
+    "priority",
+    "column_break_alignment",
+    "responsible_employee",
+    "section_schedule",
+    "start_date",
+    "column_break_schedule",
+    "end_date",
+    "section_org",
+    "business_unit",
+    "column_break_org",
+    "entity",
+    "section_detail",
+    "description",
+    "workflow_state"
+  ],
   "fields": [
+    {
+      "fieldname": "section_identity",
+      "label": "Initiative",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "initiative_name",
       "label": "Initiative Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "strategic_plan",
+      "label": "Strategic Plan",
+      "fieldtype": "Link",
+      "options": "PMO Strategic Plan",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_alignment",
+      "label": "Alignment",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "strategic_objective",
@@ -21,33 +90,47 @@
       "options": "PMO Strategic Objective"
     },
     {
+      "fieldname": "priority",
+      "label": "Priority",
+      "fieldtype": "Select",
+      "options": "Low\nMedium\nHigh\nCritical",
+      "default": "Medium",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_alignment",
+      "fieldtype": "Column Break"
+    },
+    {
       "fieldname": "responsible_employee",
       "label": "Owner",
       "fieldtype": "Link",
       "options": "Employee"
     },
     {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "fieldname": "section_schedule",
+      "label": "Schedule",
+      "fieldtype": "Section Break"
     },
     {
-      "fieldname": "description",
-      "label": "Description",
-      "fieldtype": "Small Text"
+      "fieldname": "start_date",
+      "label": "Start Date",
+      "fieldtype": "Date"
     },
     {
-      "fieldname": "company",
-      "label": "Company",
-      "fieldtype": "Link",
-      "options": "Company"
+      "fieldname": "column_break_schedule",
+      "fieldtype": "Column Break"
     },
     {
-      "fieldname": "entity",
-      "label": "PMO Entity",
-      "fieldtype": "Link",
-      "options": "PMO Entity"
+      "fieldname": "end_date",
+      "label": "End Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "section_org",
+      "label": "Organisation",
+      "fieldtype": "Section Break",
+      "collapsible": 1
     },
     {
       "fieldname": "business_unit",
@@ -56,27 +139,26 @@
       "options": "PMO Business Unit"
     },
     {
-      "fieldname": "strategic_plan",
-      "label": "Strategic Plan",
+      "fieldname": "column_break_org",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "entity",
+      "label": "PMO Entity (legacy)",
       "fieldtype": "Link",
-      "options": "PMO Strategic Plan"
+      "options": "PMO Entity",
+      "hidden": 1,
+      "read_only": 1
     },
     {
-      "fieldname": "priority",
-      "label": "Priority",
-      "fieldtype": "Select",
-      "options": "Low\nMedium\nHigh\nCritical",
-      "default": "Medium"
+      "fieldname": "section_detail",
+      "label": "Description",
+      "fieldtype": "Section Break"
     },
     {
-      "fieldname": "start_date",
-      "label": "Start Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "end_date",
-      "label": "End Date",
-      "fieldtype": "Date"
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text"
     },
     {
       "fieldname": "workflow_state",

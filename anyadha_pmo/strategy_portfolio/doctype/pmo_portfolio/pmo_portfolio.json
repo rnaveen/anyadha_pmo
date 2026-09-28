@@ -7,12 +7,86 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "portfolio_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "portfolio_name,portfolio_code,company,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "field_order": [
+    "section_identity",
+    "portfolio_name",
+    "portfolio_code",
+    "column_break_identity",
+    "company",
+    "status",
+    "section_alignment",
+    "strategic_plan",
+    "portfolio_type",
+    "column_break_alignment",
+    "portfolio_manager",
+    "section_schedule",
+    "start_date",
+    "column_break_schedule",
+    "end_date",
+    "section_budget",
+    "approved_budget",
+    "column_break_budget",
+    "currency",
+    "section_org",
+    "business_unit",
+    "column_break_org",
+    "entity",
+    "section_detail",
+    "description",
+    "section_projects",
+    "linked_projects_html",
+    "workflow_state"
+  ],
   "fields": [
+    {
+      "fieldname": "section_identity",
+      "label": "Portfolio",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "portfolio_name",
       "label": "Portfolio Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "portfolio_code",
+      "label": "Portfolio Code",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_alignment",
+      "label": "Alignment",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "strategic_plan",
@@ -21,24 +95,76 @@
       "options": "PMO Strategic Plan"
     },
     {
+      "fieldname": "portfolio_type",
+      "label": "Portfolio Type",
+      "fieldtype": "Select",
+      "options": "Strategic\nOperational\nInvestment\nTransformation\nOther"
+    },
+    {
+      "fieldname": "column_break_alignment",
+      "fieldtype": "Column Break"
+    },
+    {
       "fieldname": "portfolio_manager",
       "label": "Portfolio Manager",
       "fieldtype": "Link",
       "options": "Employee"
     },
     {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "fieldname": "section_schedule",
+      "label": "Schedule",
+      "fieldtype": "Section Break"
     },
     {
-      "fieldname": "company",
-      "label": "Company",
+      "fieldname": "start_date",
+      "label": "Start Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "column_break_schedule",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "end_date",
+      "label": "End Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "section_budget",
+      "label": "Budget",
+      "fieldtype": "Section Break",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "approved_budget",
+      "label": "Approved Budget",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "column_break_budget",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "currency",
+      "label": "Currency",
       "fieldtype": "Link",
-      "options": "Company",
-      "reqd": 1,
-      "in_standard_filter": 1
+      "options": "Currency"
+    },
+    {
+      "fieldname": "section_org",
+      "label": "Organisation",
+      "fieldtype": "Section Break",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "business_unit",
+      "label": "Business Unit",
+      "fieldtype": "Link",
+      "options": "PMO Business Unit"
+    },
+    {
+      "fieldname": "column_break_org",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "entity",
@@ -49,21 +175,9 @@
       "read_only": 1
     },
     {
-      "fieldname": "business_unit",
-      "label": "Business Unit",
-      "fieldtype": "Link",
-      "options": "PMO Business Unit"
-    },
-    {
-      "fieldname": "portfolio_code",
-      "label": "Portfolio Code",
-      "fieldtype": "Data"
-    },
-    {
-      "fieldname": "portfolio_type",
-      "label": "Portfolio Type",
-      "fieldtype": "Select",
-      "options": "Strategic\nOperational\nInvestment\nTransformation\nOther"
+      "fieldname": "section_detail",
+      "label": "Description",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "description",
@@ -71,25 +185,15 @@
       "fieldtype": "Small Text"
     },
     {
-      "fieldname": "start_date",
-      "label": "Start Date",
-      "fieldtype": "Date"
+      "fieldname": "section_projects",
+      "label": "Projects in this Portfolio",
+      "fieldtype": "Section Break",
+      "description": "Projects link here via the Project form (Portfolio field). Only same-Company projects are listed."
     },
     {
-      "fieldname": "end_date",
-      "label": "End Date",
-      "fieldtype": "Date"
-    },
-    {
-      "fieldname": "approved_budget",
-      "label": "Approved Budget",
-      "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "currency",
-      "label": "Currency",
-      "fieldtype": "Link",
-      "options": "Currency"
+      "fieldname": "linked_projects_html",
+      "label": "Linked Projects",
+      "fieldtype": "HTML"
     },
     {
       "fieldname": "workflow_state",

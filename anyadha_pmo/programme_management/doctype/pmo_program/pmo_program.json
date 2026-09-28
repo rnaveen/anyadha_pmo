@@ -7,17 +7,103 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "program_name",
+  "show_title_field_in_link": 1,
+  "search_fields": "program_name,program_code,company,portfolio,status",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "field_order": [
+    "section_identity",
+    "program_name",
+    "program_code",
+    "column_break_identity",
+    "company",
+    "status",
+    "section_nesting",
+    "portfolio",
+    "program_type",
+    "column_break_nesting",
+    "program_manager",
+    "strategic_objective",
+    "section_schedule",
+    "start_date",
+    "column_break_schedule",
+    "end_date",
+    "section_budget",
+    "approved_budget",
+    "column_break_budget",
+    "currency",
+    "section_org",
+    "business_unit",
+    "column_break_org",
+    "entity",
+    "section_detail",
+    "description",
+    "workflow_state"
+  ],
   "fields": [
+    {
+      "fieldname": "section_identity",
+      "label": "Programme",
+      "fieldtype": "Section Break"
+    },
     {
       "fieldname": "program_name",
       "label": "Programme Name",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
     },
     {
       "fieldname": "program_code",
       "label": "Programme Code",
-      "fieldtype": "Data"
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_nesting",
+      "label": "Nesting",
+      "fieldtype": "Section Break",
+      "description": "Programme is optional on Projects. Use it as a theme umbrella under a Company Portfolio."
+    },
+    {
+      "fieldname": "portfolio",
+      "label": "Portfolio",
+      "fieldtype": "Link",
+      "options": "PMO Portfolio",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "program_type",
+      "label": "Programme Type",
+      "fieldtype": "Select",
+      "options": "Strategic\nOperational\nDevelopment\nCSR\nGrant\nOther"
+    },
+    {
+      "fieldname": "column_break_nesting",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "program_manager",
@@ -32,9 +118,18 @@
       "options": "PMO Strategic Objective"
     },
     {
+      "fieldname": "section_schedule",
+      "label": "Schedule",
+      "fieldtype": "Section Break"
+    },
+    {
       "fieldname": "start_date",
       "label": "Start Date",
       "fieldtype": "Date"
+    },
+    {
+      "fieldname": "column_break_schedule",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "end_date",
@@ -42,27 +137,31 @@
       "fieldtype": "Date"
     },
     {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "fieldname": "section_budget",
+      "label": "Budget",
+      "fieldtype": "Section Break",
+      "collapsible": 1
     },
     {
-      "fieldname": "description",
-      "label": "Description",
-      "fieldtype": "Small Text"
+      "fieldname": "approved_budget",
+      "label": "Approved Budget",
+      "fieldtype": "Currency"
     },
     {
-      "fieldname": "company",
-      "label": "Company",
+      "fieldname": "column_break_budget",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "currency",
+      "label": "Currency",
       "fieldtype": "Link",
-      "options": "Company"
+      "options": "Currency"
     },
     {
-      "fieldname": "entity",
-      "label": "PMO Entity",
-      "fieldtype": "Link",
-      "options": "PMO Entity"
+      "fieldname": "section_org",
+      "label": "Organisation",
+      "fieldtype": "Section Break",
+      "collapsible": 1
     },
     {
       "fieldname": "business_unit",
@@ -71,27 +170,26 @@
       "options": "PMO Business Unit"
     },
     {
-      "fieldname": "portfolio",
-      "label": "Portfolio",
+      "fieldname": "column_break_org",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "entity",
+      "label": "PMO Entity (legacy)",
       "fieldtype": "Link",
-      "options": "PMO Portfolio"
+      "options": "PMO Entity",
+      "hidden": 1,
+      "read_only": 1
     },
     {
-      "fieldname": "program_type",
-      "label": "Programme Type",
-      "fieldtype": "Select",
-      "options": "Strategic\nOperational\nDevelopment\nCSR\nGrant\nOther"
+      "fieldname": "section_detail",
+      "label": "Description",
+      "fieldtype": "Section Break"
     },
     {
-      "fieldname": "approved_budget",
-      "label": "Approved Budget",
-      "fieldtype": "Currency"
-    },
-    {
-      "fieldname": "currency",
-      "label": "Currency",
-      "fieldtype": "Link",
-      "options": "Currency"
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text"
     },
     {
       "fieldname": "workflow_state",

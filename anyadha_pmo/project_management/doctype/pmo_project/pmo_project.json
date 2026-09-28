@@ -4,39 +4,59 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_identity",
   "project_title",
   "project_code",
+  "column_break_identity",
   "company",
-  "erpnext_project",
-  "program",
+  "status",
+  "section_nesting",
   "portfolio",
+  "program",
+  "column_break_nesting",
+  "erpnext_project",
+  "section_classification",
   "project_type",
   "category",
+  "column_break_classification",
   "funding_source",
   "geographic_area",
+  "section_delivery",
   "project_manager",
+  "priority",
+  "column_break_delivery",
   "start_date",
   "end_date",
+  "section_finance",
   "approved_budget",
   "actual_cost",
-  "status",
-  "description",
-  "business_unit",
-  "project_type_name",
-  "priority",
+  "column_break_finance",
   "percent_complete",
   "currency",
+  "section_detail",
+  "description",
+  "section_org",
+  "business_unit",
+  "column_break_org",
+  "project_type_name",
   "section_budget",
   "budget_lines",
   "section_funders",
   "funder_lines",
-  "approved_on",
+  "section_approval",
   "approved_by",
+  "column_break_approval",
+  "approved_on",
   "workflow_state",
   "donor",
   "entity"
  ],
  "fields": [
+  {
+   "fieldname": "section_identity",
+   "fieldtype": "Section Break",
+   "label": "Project"
+  },
   {
    "fieldname": "project_title",
    "fieldtype": "Data",
@@ -50,6 +70,10 @@
    "label": "Project Code"
   },
   {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
@@ -58,10 +82,25 @@
    "in_standard_filter": 1
   },
   {
-   "fieldname": "erpnext_project",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+   "default": "Draft",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_nesting",
+   "fieldtype": "Section Break",
+   "label": "Nesting",
+   "description": "Portfolio is the delivery bucket. Programme is optional."
+  },
+  {
+   "fieldname": "portfolio",
    "fieldtype": "Link",
-   "label": "ERPNext Project",
-   "options": "Project"
+   "label": "Portfolio",
+   "options": "PMO Portfolio",
+   "in_standard_filter": 1
   },
   {
    "fieldname": "program",
@@ -70,10 +109,20 @@
    "options": "PMO Program"
   },
   {
-   "fieldname": "portfolio",
+   "fieldname": "column_break_nesting",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "erpnext_project",
    "fieldtype": "Link",
-   "label": "Portfolio",
-   "options": "PMO Portfolio"
+   "label": "ERPNext Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "section_classification",
+   "fieldtype": "Section Break",
+   "label": "Classification",
+   "collapsible": 1
   },
   {
    "fieldname": "project_type",
@@ -88,6 +137,10 @@
    "options": "PMO Project Category"
   },
   {
+   "fieldname": "column_break_classification",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "funding_source",
    "fieldtype": "Link",
    "label": "Funding Source",
@@ -100,10 +153,26 @@
    "options": "PMO Geographic Area"
   },
   {
+   "fieldname": "section_delivery",
+   "fieldtype": "Section Break",
+   "label": "Delivery"
+  },
+  {
    "fieldname": "project_manager",
    "fieldtype": "Link",
    "label": "Project Manager",
    "options": "Employee"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "column_break_delivery",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "start_date",
@@ -116,6 +185,12 @@
    "label": "End Date"
   },
   {
+   "fieldname": "section_finance",
+   "fieldtype": "Section Break",
+   "label": "Finance snapshot",
+   "collapsible": 1
+  },
+  {
    "fieldname": "approved_budget",
    "fieldtype": "Currency",
    "label": "Approved Budget"
@@ -126,34 +201,8 @@
    "label": "Actual Cost"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
-   "fieldname": "business_unit",
-   "fieldtype": "Link",
-   "label": "Business Unit",
-   "options": "PMO Business Unit"
-  },
-  {
-   "fieldname": "project_type_name",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Project Type Name"
-  },
-  {
-   "default": "Medium",
-   "fieldname": "priority",
-   "fieldtype": "Select",
-   "label": "Priority",
-   "options": "Low\nMedium\nHigh\nCritical"
+   "fieldname": "column_break_finance",
+   "fieldtype": "Column Break"
   },
   {
    "default": "0",
@@ -166,6 +215,38 @@
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency"
+  },
+  {
+   "fieldname": "section_detail",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_org",
+   "fieldtype": "Section Break",
+   "label": "Organisation",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "business_unit",
+   "fieldtype": "Link",
+   "label": "Business Unit",
+   "options": "PMO Business Unit"
+  },
+  {
+   "fieldname": "column_break_org",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_type_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Project Type Name"
   },
   {
    "fieldname": "section_budget",
@@ -190,15 +271,25 @@
    "options": "PMO Project Funder Line"
   },
   {
-   "fieldname": "approved_on",
-   "fieldtype": "Datetime",
-   "label": "Approved On"
+   "fieldname": "section_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval",
+   "collapsible": 1
   },
   {
    "fieldname": "approved_by",
    "fieldtype": "Link",
    "label": "Approved By",
    "options": "User"
+  },
+  {
+   "fieldname": "column_break_approval",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On"
   },
   {
    "fieldname": "workflow_state",
