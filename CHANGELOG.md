@@ -13,6 +13,7 @@
 - Optional `parent_strategic_plan` on `PMO Strategic Plan` (holding cascade; not required)
 - Portfolio linked-Projects HTML list (same-Company nesting via `PMO Project.portfolio`)
 - Outcomes and Performance workspace (one desk for former M&E + Performance MIS links)
+- `docs/ui_soft_hide/` — reversible Desk soft-hide pack (v1.2): hide hollow IRM + dormant twins; Grants/CSR show Funding Party · Agreement · Project · Deliverable; re-apply after migrate (no schema change)
 
 ### Changed
 

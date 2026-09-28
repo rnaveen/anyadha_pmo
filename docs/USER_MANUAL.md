@@ -12,6 +12,8 @@ Grants and CSR use the **same Agreement** form. Choose **Agreement Type**: Grant
 
 CSR desk lists Agreements typed CSR. Do **not** create the old “CSR Agreement” record — that path is retired for day-to-day use.
 
+On a cleaned Desk (soft-hide applied on the site), **Grants** and **CSR** left menus and cards show **Funding Party**, **Agreement**, **Project**, and **Deliverable** (Grants also shows **Funding Source**). Old twin DocTypes stay out of those desks.
+
 ### Case thread on the Agreement
 
 Open a saved Agreement to work the funding story in one place:
