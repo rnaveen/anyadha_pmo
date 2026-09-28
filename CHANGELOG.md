@@ -25,6 +25,7 @@
 ### Fixed
 
 - Agreement↔Project Company match and one-Agreement-per-Project validation
+- `PMO Project` amount validation coerces Percent/Currency strings with `flt` (avoids TypeError on save)
 
 ### Internal
 

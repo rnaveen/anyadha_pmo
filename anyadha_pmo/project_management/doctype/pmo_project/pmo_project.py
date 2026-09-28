@@ -21,11 +21,11 @@ class PMOProject(Document):
 			frappe.throw("End Date cannot be earlier than Start Date.")
 
 	def _validate_amounts(self):
-		if self.approved_budget is not None and self.approved_budget < 0:
+		if self.approved_budget is not None and flt(self.approved_budget) < 0:
 			frappe.throw("Approved Budget cannot be negative.")
-		if self.actual_cost is not None and self.actual_cost < 0:
+		if self.actual_cost is not None and flt(self.actual_cost) < 0:
 			frappe.throw("Actual Cost cannot be negative.")
-		if self.percent_complete is not None and not 0 <= self.percent_complete <= 100:
+		if self.percent_complete is not None and not 0 <= flt(self.percent_complete) <= 100:
 			frappe.throw("Percent Complete must be between 0 and 100.")
 
 	def _validate_hierarchy(self):
