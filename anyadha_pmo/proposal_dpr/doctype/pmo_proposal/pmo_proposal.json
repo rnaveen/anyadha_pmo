@@ -7,15 +7,22 @@
   "editable_grid": 0,
   "engine": "InnoDB",
   "track_changes": 1,
+  "title_field": "proposal_title",
+  "show_title_field_in_link": 1,
+  "search_fields": "proposal_title,status,donor,project_type",
+  "sort_field": "modified",
+  "sort_order": "DESC",
   "field_order": [
     "section_proposal",
     "proposal_title",
     "opportunity",
     "column_break_proposal",
     "status",
+    "section_classification",
     "project_type",
     "section_ask",
     "donor",
+    "column_break_ask",
     "requested_amount",
     "section_description",
     "description"
@@ -30,7 +37,8 @@
       "fieldname": "proposal_title",
       "label": "Proposal Title",
       "fieldtype": "Data",
-      "reqd": 1
+      "reqd": 1,
+      "in_list_view": 1
     },
     {
       "fieldname": "opportunity",
@@ -46,13 +54,24 @@
       "fieldname": "status",
       "label": "Status",
       "fieldtype": "Select",
-      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled"
+      "options": "Draft\nOpen\nIn Progress\nPending Approval\nApproved\nRejected\nCompleted\nClosed\nCancelled",
+      "default": "Draft",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "section_classification",
+      "label": "Classification",
+      "fieldtype": "Section Break"
     },
     {
       "fieldname": "project_type",
       "label": "Project Type",
       "fieldtype": "Link",
-      "options": "PMO Project Type"
+      "options": "PMO Project Type",
+      "description": "Same master as on Project. Classifies the intended delivery type — does not create or link a Project.",
+      "in_list_view": 1,
+      "in_standard_filter": 1
     },
     {
       "fieldname": "section_ask",
@@ -63,12 +82,19 @@
       "fieldname": "donor",
       "label": "Donor",
       "fieldtype": "Link",
-      "options": "PMO Donor"
+      "options": "PMO Donor",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "column_break_ask",
+      "fieldtype": "Column Break"
     },
     {
       "fieldname": "requested_amount",
       "label": "Requested Amount",
-      "fieldtype": "Currency"
+      "fieldtype": "Currency",
+      "in_list_view": 1
     },
     {
       "fieldname": "section_description",

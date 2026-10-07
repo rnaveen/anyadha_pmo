@@ -1,11 +1,12 @@
 {
-  "version": "v1.2",
-  "description": "Soft-hide hollow PMO IRM desks and dormant funding twins from Desk UI only; clean left Workspace Sidebars and right Workspace card links on keep-visible desks to the suite target story (Grants/CSR: Funding Party · Agreement · Project · Deliverable; Agreement filtered by desk). Rollback via snapshot + revert.py. Does not delete DocTypes or change schema. Lasting desk shape — S7/S8 hard-retire/drop later; revert only for debug.",
+  "version": "v1.4",
+  "description": "Soft-hide hollow PMO IRM desks from Desk UI; clean sidebars/cards on keep-visible desks. S8 funding twins removed from app (no longer soft-hidden). S6 Central Approval sunset on Governance. Rollback via snapshot + revert.py for IRM hide. S7 hard-retire IRM later.",
   "authority": [
-    "frappe/design/pmo_suite_operating_model/BUILD_SPEC.md §10",
-    "frappe/design/pmo_grc_seam/README.md §5",
+    "frappe/design/pmo_suite_operating_model/BUILD_SPEC.md \u00a710",
+    "frappe/design/pmo_grc_seam/README.md \u00a74\u2013\u00a76",
     "frappe/design/pmo_funding_spine/FIELD_MAP_S1.md D3/D6/reporting twins",
-    "grill 2026-09-28 soft-hide package (Q1–Q11)"
+    "grill 2026-09-28 soft-hide package (Q1\u2013Q11)",
+    "suite plan U7 / S6 seam"
   ],
   "keep_visible_workspaces": [
     "Executive PMO",
@@ -171,7 +172,7 @@
     },
     {
       "name": "Executive PMO",
-      "reason": "Delivery masters only — drop IRM/Entity masters from left menu",
+      "reason": "Delivery masters only \u2014 drop IRM/Entity masters from left menu",
       "keep_doctypes": [
         "PMO Donor",
         "PMO Funding Source",
@@ -239,19 +240,19 @@
   "workspaces_hide": [
     {
       "name": "Compliance and Regulatory",
-      "reason": "IRM → grc_core Compliance (retire-as-ready UI hide)"
+      "reason": "IRM \u2192 grc_core Compliance (retire-as-ready UI hide)"
     },
     {
       "name": "Risk and Compliance",
-      "reason": "IRM → grc_core Risk & Controls"
+      "reason": "IRM \u2192 grc_core Risk & Controls"
     },
     {
       "name": "Audit and Assurance",
-      "reason": "IRM → grc_core (G3 Engagement later); hollow PMO audit"
+      "reason": "IRM \u2192 grc_core (G3 Engagement later); hollow PMO audit"
     },
     {
       "name": "SOP and Document Control",
-      "reason": "IRM → grc_core Instrument later; hollow PMO DOC"
+      "reason": "IRM \u2192 grc_core Instrument later; hollow PMO DOC"
     },
     {
       "name": "Monitoring and Evaluation",
@@ -274,376 +275,252 @@
     "in_create": 0,
     "items": [
       {
-        "name": "PMO Grant Agreement",
-        "reason": "FIELD_MAP D3 twin — Agreement path is PMO Grant"
-      },
-      {
-        "name": "PMO CSR Agreement",
-        "reason": "FIELD_MAP D3 twin — typed Agreement"
-      },
-      {
-        "name": "PMO CSR Project",
-        "reason": "FIELD_MAP D3 twin — Agreement↔Project link"
-      },
-      {
-        "name": "PMO CSR Partner",
-        "reason": "Superseded by Funding Party (PMO Donor)"
-      },
-      {
-        "name": "PMO CSR Budget",
-        "reason": "Dormant CSR twin — budget on Project"
-      },
-      {
-        "name": "PMO CSR Compliance",
-        "reason": "Dormant CSR twin — IRM → grc_core"
-      },
-      {
-        "name": "PMO CSR Impact Assessment",
-        "reason": "Dormant CSR twin — Outcomes later"
-      },
-      {
-        "name": "PMO CSR Proposal",
-        "reason": "Dormant CSR twin — use Proposal desk"
-      },
-      {
-        "name": "PMO CSR Utilization",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO Project Budget",
-        "reason": "FIELD_MAP D6 — budget child on Project"
-      },
-      {
-        "name": "PMO Grant Reporting",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO Grant Budget",
-        "reason": "Dormant Grant twin — budget on Project"
-      },
-      {
-        "name": "PMO Grant Disbursement",
-        "reason": "Dormant Grant twin — delivery path later"
-      },
-      {
-        "name": "PMO Grant Utilization",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO Donor Report",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO Utilization Certificate",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO CSR Report",
-        "reason": "Reporting twin → Deliverable"
-      },
-      {
-        "name": "PMO Donor Compliance",
-        "reason": "Hollow / dormant — IRM → grc_core"
-      },
-      {
-        "name": "PMO Fund Reconciliation",
-        "reason": "Dormant Grant twin"
-      },
-      {
-        "name": "PMO Restricted Fund",
-        "reason": "Dormant Grant twin"
-      },
-      {
         "name": "PMO Compliance Action",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Compliance Calendar",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Compliance Certificate",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Compliance Item",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Compliance Obligation",
-        "reason": "Hollow PMO IRM — use GRC Obligation"
+        "reason": "Hollow PMO IRM \u2014 use GRC Obligation"
       },
       {
         "name": "PMO Compliance Review",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO License",
-        "reason": "Hollow PMO IRM — G3 Instrument later"
+        "reason": "Hollow PMO IRM \u2014 G3 Instrument later"
       },
       {
         "name": "PMO Non Compliance",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Regulatory Filing",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Regulatory Notice",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Statutory Registration",
-        "reason": "Hollow PMO IRM — Compliance desk"
+        "reason": "Hollow PMO IRM \u2014 Compliance desk"
       },
       {
         "name": "PMO Access Review",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Asset Assurance",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Control",
-        "reason": "Hollow PMO IRM — use GRC Control"
+        "reason": "Hollow PMO IRM \u2014 use GRC Control"
       },
       {
         "name": "PMO Control Self Assessment",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Control Test",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Corrective Action",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Data Governance Rule",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Enterprise Risk",
-        "reason": "Hollow PMO IRM — use GRC Risk"
+        "reason": "Hollow PMO IRM \u2014 use GRC Risk"
       },
       {
         "name": "PMO Fraud Incident",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Fraud Risk",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Incident",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Master Data Change",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Preventive Action",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Risk Assessment",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Risk Treatment",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO System Change Request",
-        "reason": "Hollow PMO IRM — Risk desk"
+        "reason": "Hollow PMO IRM \u2014 Risk desk"
       },
       {
         "name": "PMO Assurance Review",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Action",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Area",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Closure",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Engagement",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Finding",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Observation",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Plan",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Recommendation",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Audit Report",
-        "reason": "Hollow PMO IRM — Audit desk"
+        "reason": "Hollow PMO IRM \u2014 Audit desk"
       },
       {
         "name": "PMO Document Approval",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Document Control",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Document Review",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Document Version",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Governance Improvement",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Policy",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO Record Retention Rule",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
       },
       {
         "name": "PMO SOP",
-        "reason": "Hollow PMO IRM — SOP/DOC desk"
+        "reason": "Hollow PMO IRM \u2014 SOP/DOC desk"
+      },
+      {
+        "name": "PMO Approval Request",
+        "reason": "S6 Option C sunset \u2014 Workflow + GRC Authority Rule"
+      },
+      {
+        "name": "PMO Approval Step",
+        "reason": "S6 Option C sunset \u2014 with Approval Request"
+      },
+      {
+        "name": "PMO Authority Matrix",
+        "reason": "S6 Option C sunset \u2014 use GRC Authority Rule"
+      },
+      {
+        "name": "PMO Authority Rule",
+        "reason": "S6 Option C sunset \u2014 use GRC Authority Rule"
       }
     ]
   },
+  "sidebar_links_hide": [
+    {
+      "sidebar": "Governance",
+      "link_to": "PMO Approval Request",
+      "reason": "S6 Central Approval sunset"
+    },
+    {
+      "sidebar": "Governance",
+      "link_to": "PMO Approval Step",
+      "reason": "S6 Central Approval sunset"
+    },
+    {
+      "sidebar": "Governance",
+      "link_to": "PMO Authority Matrix",
+      "reason": "S6 Central Approval sunset"
+    },
+    {
+      "sidebar": "Governance",
+      "link_to": "PMO Authority Rule",
+      "reason": "S6 Central Approval sunset"
+    }
+  ],
   "workspace_links_hide": [
     {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Grant Agreement",
-      "reason": "Dormant twin"
+      "workspace": "Governance",
+      "link_to": "PMO Approval Request",
+      "reason": "S6 Central Approval sunset"
     },
     {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Grant Reporting",
-      "reason": "Reporting twin"
+      "workspace": "Governance",
+      "link_to": "PMO Approval Step",
+      "reason": "S6 Central Approval sunset"
     },
     {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Donor Report",
-      "reason": "Reporting twin"
+      "workspace": "Governance",
+      "link_to": "PMO Authority Matrix",
+      "reason": "S6 Central Approval sunset"
     },
     {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Utilization Certificate",
-      "reason": "Reporting twin"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Grant Budget",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Grant Disbursement",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Grant Utilization",
-      "reason": "Reporting twin"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Donor Compliance",
-      "reason": "→ grc_core"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Fund Reconciliation",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "Grants and Donor Management",
-      "link_to": "PMO Restricted Fund",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Agreement",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Project",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Partner",
-      "reason": "→ Funding Party"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Report",
-      "reason": "Reporting twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Budget",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Compliance",
-      "reason": "→ grc_core"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Impact Assessment",
-      "reason": "Dormant twin"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Proposal",
-      "reason": "→ Proposal desk"
-    },
-    {
-      "workspace": "CSR Management",
-      "link_to": "PMO CSR Utilization",
-      "reason": "Reporting twin"
-    },
-    {
-      "workspace": "Project Management",
-      "link_to": "PMO Project Budget",
-      "reason": "Standalone budget dormant — use Project budget child"
+      "workspace": "Governance",
+      "link_to": "PMO Authority Rule",
+      "reason": "S6 Central Approval sunset"
     }
   ],
   "out_of_scope": [
-    "Governance workspace (BUILD_SPEC soft-keep)",
-    "Central Approval sunset (S6 seam)",
+    "Governance Board / RPT / Vendor DD soft-keep (BUILD_SPEC \u00a78) \u2014 only Central Approval sunset in v1.3",
     "O-6 Indicator/KPI field merge",
-    "DocType delete / schema / migrate (S8 twin drop)",
-    "grc_core changes",
-    "App fixture JSON sync (DB Desk only; fixtures stay source for installs — re-apply after migrate)",
-    "Workspace Link list filters (no field on card links — Agreement filter is on left sidebar route_options)"
+    "App fixture JSON sync (DB Desk only; fixtures stay source for installs \u2014 re-apply after migrate)",
+    "Workspace Link list filters (no field on card links \u2014 Agreement filter is on left sidebar route_options)",
+    "S7 IRM DocType hard-retire / delete"
   ]
 }

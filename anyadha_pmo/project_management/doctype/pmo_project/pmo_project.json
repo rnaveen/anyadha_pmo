@@ -18,6 +18,7 @@
   "section_classification",
   "project_type",
   "category",
+  "business_unit",
   "column_break_classification",
   "funding_source",
   "geographic_area",
@@ -35,10 +36,6 @@
   "currency",
   "section_detail",
   "description",
-  "section_org",
-  "business_unit",
-  "column_break_org",
-  "project_type_name",
   "section_budget",
   "budget_lines",
   "section_funders",
@@ -48,6 +45,7 @@
   "column_break_approval",
   "approved_on",
   "workflow_state",
+  "project_type_name",
   "donor",
   "entity"
  ],
@@ -135,6 +133,12 @@
    "fieldtype": "Link",
    "label": "Project Category",
    "options": "PMO Project Category"
+  },
+  {
+   "fieldname": "business_unit",
+   "fieldtype": "Link",
+   "label": "Business Unit",
+   "options": "PMO Business Unit"
   },
   {
    "fieldname": "column_break_classification",
@@ -227,28 +231,6 @@
    "label": "Description"
   },
   {
-   "fieldname": "section_org",
-   "fieldtype": "Section Break",
-   "label": "Organisation",
-   "collapsible": 1
-  },
-  {
-   "fieldname": "business_unit",
-   "fieldtype": "Link",
-   "label": "Business Unit",
-   "options": "PMO Business Unit"
-  },
-  {
-   "fieldname": "column_break_org",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "project_type_name",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Project Type Name"
-  },
-  {
    "fieldname": "section_budget",
    "fieldtype": "Section Break",
    "label": "Budget Lines"
@@ -298,6 +280,12 @@
    "read_only": 1
   },
   {
+   "fieldname": "project_type_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Project Type Name"
+  },
+  {
    "fieldname": "donor",
    "fieldtype": "Link",
    "label": "Donor (legacy)",
@@ -315,7 +303,7 @@
   }
  ],
  "links": [],
- "modified": "2026-09-27 19:20:00.000000",
+ "modified": "2026-09-28 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "Project Management",
  "name": "PMO Project",

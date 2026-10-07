@@ -136,11 +136,13 @@ class IntegrationTestPMOGrantFundingSpine(IntegrationTestCase):
 		)
 		self.assertRaises(frappe.ValidationError, agreement.insert)
 
-	def test_dormant_twins_no_create_for_grants_manager(self):
-		meta = frappe.get_meta("PMO CSR Agreement")
-		perm = next(p for p in meta.permissions if p.role == "CSR Manager")
-		self.assertFalse(perm.create)
+	def test_s8_funding_twin_modules_removed_from_app(self):
+		from pathlib import Path
 
-		grant_meta = frappe.get_meta("PMO Grant Agreement")
-		gperm = next(p for p in grant_meta.permissions if p.role == "Grants Manager")
-		self.assertFalse(gperm.create)
+		from anyadha_pmo.patches.v2_2.drop_s8_funding_twins import S8_FUNDING_TWINS
+
+		app_root = Path(frappe.get_app_path("anyadha_pmo"))
+		for doctype in S8_FUNDING_TWINS:
+			folder = doctype.lower().replace(" ", "_")
+			matches = list(app_root.glob(f"**/doctype/{folder}"))
+			self.assertEqual(matches, [], f"S8 twin folder still in app: {doctype}")

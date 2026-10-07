@@ -10,9 +10,9 @@ Grants and CSR use the **same Agreement** form. Choose **Agreement Type**: Grant
 4. Link one or more **Projects** on the Agreement (same Company as the Agreement).
 5. Optional: attach the signed file, agreement number, and conditions.
 
-CSR desk lists Agreements typed CSR. Do **not** create the old “CSR Agreement” record — that path is retired for day-to-day use.
+CSR desk lists Agreements typed CSR. The old separate CSR Agreement / CSR Project forms are **removed** — use typed Agreement and Project.
 
-On a cleaned Desk (soft-hide applied on the site), **Grants** and **CSR** left menus and cards show **Funding Party**, **Agreement**, **Project**, and **Deliverable** (Grants also shows **Funding Source**). Old twin DocTypes stay out of those desks.
+**Grants** and **CSR** menus show **Funding Party**, **Agreement**, **Project**, and **Deliverable** (Grants also shows **Funding Source**).
 
 ### Case thread on the Agreement
 
@@ -21,6 +21,7 @@ Open a saved Agreement to work the funding story in one place:
 - The blue status strip shows type, status, company, funding party, project count, and open deliverables.
 - Use the **Case** button group to **Create Project**, **Create Deliverable**, or open the linked Proposal / Funding Party.
 - Prefer the Agreement form for “what happens next” — Grants and CSR desks stay as filtered lists.
+- Optional (when GRC is installed and **Suggest Obligation from Agreement** is on in GRC Settings): **Case → Suggest Obligations** turns Agreement conditions into draft GRC Obligations. With that flag off, create Obligations manually in GRC and link them to the Agreement.
 
 ## Funding Party
 
@@ -50,10 +51,11 @@ From an Agreement, **Case → Create Deliverable** picks a linked Project when m
 
 ## Proposals
 
-1. Create a **Proposal** with title, donor, and requested amount.
-2. When ready, use **Case → Promote to Agreement** (choose Company and Agreement Type).
-3. The new Agreement keeps the Proposal link and copies donor / amount.
-4. If an Agreement already exists, **Open Agreement** (or Agreements) from the Proposal.
+1. Create a **Proposal** with title, donor, and requested amount. Optionally set **Project Type** (same list used on Projects) to classify the intended delivery type — it does not create or link a Project.
+2. The Proposals list shows title, status, donor, amount, and project type; filter by status, donor, or project type.
+3. When ready, use **Case → Promote to Agreement** (choose Company and Agreement Type).
+4. The new Agreement keeps the Proposal link and copies donor / amount.
+5. If an Agreement already exists, **Open Agreement** (or Agreements) from the Proposal.
 
 ## Strategy
 
@@ -86,8 +88,5 @@ Desk forms group fields by job in multiple columns: identity and status, nesting
 
 ## What not to use day-to-day
 
-These remain in the system for history but normal users should not create new ones:
-
-- Grant Agreement (thin twin), CSR Agreement, CSR Project
-- Standalone Project Budget (use budget lines on Project)
-- Old Grant Reporting / Donor Report / UC / CSR Report masters (use Deliverable instead)
+- Old Grant/CSR twin forms are **gone** — use Agreement, Project budget lines, and Deliverable.
+- Central Approval (Approval Request / Step / PMO Authority Matrix) — delivery uses Workflow; GRC uses Workflow + GRC Authority Rule. Board, RPT, and Vendor DD stay on Governance.

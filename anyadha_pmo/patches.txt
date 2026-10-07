@@ -2,3 +2,4 @@
 
 [post_model_sync]
 anyadha_pmo.patches.v2_2.migrate_u3_funding_foundation
+anyadha_pmo.patches.v2_2.drop_s8_funding_twins

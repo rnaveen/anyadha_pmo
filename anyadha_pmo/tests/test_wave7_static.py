@@ -13,6 +13,9 @@ class TestWave7Static(unittest.TestCase):
             if data.get("doctype") != "DocType" or data.get("issingle"):
                 continue
             self.assertTrue(path.with_suffix(".py").exists(), path)
+            # Child tables inherit parent permissions; empty permissions is normal.
+            if data.get("istable"):
+                continue
             self.assertTrue(data.get("permissions"), path)
 
     def test_performance_workspace_contains_all_wave6_reports(self):

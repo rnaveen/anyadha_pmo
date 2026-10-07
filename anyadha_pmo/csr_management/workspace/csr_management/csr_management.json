@@ -1,150 +1,176 @@
 {
- "app": "anyadha_pmo",
- "charts": [],
- "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>CSR Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Anyadha PMO CSR Management workspace.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}}]",
- "creation": "2026-08-25 00:00:00",
- "custom_blocks": [],
- "docstatus": 0,
- "doctype": "Workspace",
- "for_user": "",
- "hide_custom": 0,
- "icon": "heart",
- "idx": 6,
- "is_hidden": 0,
- "label": "CSR Management",
- "links": [
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Master Data & Transactions",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Agreement",
-   "link_count": 0,
-   "link_to": "PMO CSR Agreement",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Budget",
-   "link_count": 0,
-   "link_to": "PMO CSR Budget",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Compliance",
-   "link_count": 0,
-   "link_to": "PMO CSR Compliance",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Impact Assessment",
-   "link_count": 0,
-   "link_to": "PMO CSR Impact Assessment",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Partner",
-   "link_count": 0,
-   "link_to": "PMO CSR Partner",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Project",
-   "link_count": 0,
-   "link_to": "PMO CSR Project",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Proposal",
-   "link_count": 0,
-   "link_to": "PMO CSR Proposal",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 1,
-   "is_query_report": 0,
-   "label": "CSR Report",
-   "link_count": 0,
-   "link_to": "PMO CSR Report",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "CSR Utilization",
-   "link_count": 0,
-   "link_to": "PMO CSR Utilization",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  }
- ],
- "modified": "2026-09-28 08:55:43.060845",
- "modified_by": "Administrator",
- "module": "CSR Management",
- "name": "CSR Management",
- "number_cards": [],
- "owner": "Administrator",
- "parent_page": "",
- "public": 1,
- "quick_lists": [],
- "restrict_to_domain": "",
- "roles": [
-  {
-   "role": "PMO Administrator"
-  },
-  {
-   "role": "PMO Head"
-  },
-  {
-   "role": "CSR Manager"
-  }
- ],
- "sequence_id": 6.0,
- "shortcuts": [],
- "title": "CSR Management",
- "type": "Workspace"
+  "app": "anyadha_pmo",
+  "charts": [],
+  "content": "[{\"id\":\"anyadha_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>CSR Management</b></span>\",\"col\":12}},{\"id\":\"anyadha_intro\",\"type\":\"paragraph\",\"data\":{\"text\":\"<p>Agreements with type CSR on the shared Agreement DocType. Do not create the old CSR Agreement twin.</p>\",\"col\":12}},{\"id\":\"anyadha_master_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Master Data & Transactions</b></span>\",\"col\":12}},{\"id\":\"anyadha_master_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Data & Transactions\",\"col\":12}},{\"id\":\"anyadha_ql\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"CSR Agreements\",\"col\":4}}]",
+  "creation": "2026-08-25 00:00:00.000000",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "heart",
+  "idx": 6,
+  "is_hidden": 0,
+  "label": "CSR Management",
+  "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Master Data & Transactions",
+      "link_count": 0,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Funding Party",
+      "link_count": 0,
+      "link_to": "PMO Donor",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Agreement",
+      "link_count": 0,
+      "link_to": "PMO Grant",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Project",
+      "link_count": 0,
+      "link_to": "PMO Project",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Deliverable",
+      "link_count": 0,
+      "link_to": "PMO Project Deliverable",
+      "link_type": "DocType",
+      "onboard": 1,
+      "type": "Link"
+    }
+  ],
+  "modified": "2026-09-01 13:07:38.470992",
+  "modified_by": "Administrator",
+  "module": "CSR Management",
+  "module_onboarding": "",
+  "name": "CSR Management",
+  "number_cards": [],
+  "owner": "Administrator",
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [
+    {
+      "document_type": "PMO Grant",
+      "label": "CSR Agreements",
+      "quick_list_filter": "[[\"agreement_type\",\"=\",\"CSR\"]]"
+    }
+  ],
+  "restrict_to_domain": "",
+  "roles": [
+    {
+      "role": "PMO Administrator"
+    },
+    {
+      "role": "PMO Head"
+    },
+    {
+      "role": "CSR Manager"
+    }
+  ],
+  "sequence_id": 6.0,
+  "shortcuts": [],
+  "sidebar_items": [
+    {
+      "type": "Link",
+      "label": "Home",
+      "link_type": "Workspace",
+      "link_to": "CSR Management",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "show_arrow": 0,
+      "child": 0
+    },
+    {
+      "type": "Section Break",
+      "label": "Master Data & Transactions",
+      "link_type": "DocType",
+      "link_to": "",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 1,
+      "show_arrow": 0,
+      "child": 0
+    },
+    {
+      "type": "Link",
+      "label": "Funding Party",
+      "link_type": "DocType",
+      "link_to": "PMO Donor",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "show_arrow": 0,
+      "child": 0
+    },
+    {
+      "type": "Link",
+      "label": "Agreement",
+      "link_type": "DocType",
+      "link_to": "PMO Grant",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "show_arrow": 0,
+      "child": 0
+    },
+    {
+      "type": "Link",
+      "label": "Project",
+      "link_type": "DocType",
+      "link_to": "PMO Project",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "show_arrow": 0,
+      "child": 0
+    },
+    {
+      "type": "Link",
+      "label": "Deliverable",
+      "link_type": "DocType",
+      "link_to": "PMO Project Deliverable",
+      "icon": "",
+      "collapsible": 1,
+      "indent": 0,
+      "keep_closed": 0,
+      "show_arrow": 0,
+      "child": 0
+    }
+  ],
+  "type": "Workspace",
+  "standard": 1
 }

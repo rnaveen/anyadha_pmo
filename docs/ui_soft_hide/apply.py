@@ -52,6 +52,7 @@ def run() -> str:
 	doctype_names = [row["name"] for row in doctype_block.get("items") or []]
 	in_create_target = int(doctype_block.get("in_create", 0))
 	link_specs = list(manifest.get("workspace_links_hide") or [])
+	sidebar_hide_specs = list(manifest.get("sidebar_links_hide") or [])
 	sidebar_specs = list(manifest.get("workspace_sidebars_clean") or [])
 	card_specs = list(manifest.get("workspace_cards_clean") or [])
 
@@ -64,6 +65,7 @@ def run() -> str:
 		"workspace_links": list(prev.get("workspace_links") or []),
 		"workspace_sidebars": dict(prev.get("workspace_sidebars") or {}),
 		"workspace_cards": dict(prev.get("workspace_cards") or {}),
+		"sidebar_links_removed": list(prev.get("sidebar_links_removed") or []),
 	}
 
 	def _item_row(item) -> dict:
@@ -182,6 +184,49 @@ def run() -> str:
 			print(f"doctype in_create={in_create_target}: {name}")
 		else:
 			print(f"doctype already in_create={in_create_target}: {name}")
+
+	# --- selective sidebar link hide (e.g. Central Approval on Governance) ---
+	seen_sidebar_removes = {
+		(r["sidebar"], r["link_to"]) for r in snapshot.get("sidebar_links_removed") or []
+	}
+	by_sidebar: dict[str, set[str]] = {}
+	for spec in sidebar_hide_specs:
+		by_sidebar.setdefault(spec["sidebar"], set()).add(spec["link_to"])
+
+	for sidebar_name, hide_set in by_sidebar.items():
+		if not frappe.db.exists("Workspace Sidebar", sidebar_name):
+			print(f"skip sidebar hide (missing): {sidebar_name}")
+			continue
+		doc = frappe.get_doc("Workspace Sidebar", sidebar_name)
+		if sidebar_name not in snapshot["workspace_sidebars"]:
+			snapshot["workspace_sidebars"][sidebar_name] = {
+				"items": [_item_row(item) for item in (doc.items or [])]
+			}
+		kept_items = []
+		changed = False
+		for item in doc.items or []:
+			link_to = item.get("link_to") if hasattr(item, "get") else item.link_to
+			if item.type == "Link" and link_to in hide_set:
+				key = (sidebar_name, link_to)
+				if key not in seen_sidebar_removes:
+					snapshot["sidebar_links_removed"].append(
+						{"sidebar": sidebar_name, "link_to": link_to, "row": _item_row(item)}
+					)
+					seen_sidebar_removes.add(key)
+				changed = True
+				continue
+			kept_items.append(_item_row(item))
+		if changed:
+			kept_items = _prune_empty_sections(kept_items)
+			doc.set("items", [])
+			for idx, row in enumerate(kept_items, start=1):
+				row = dict(row)
+				row["idx"] = idx
+				doc.append("items", row)
+			_save_sidebar(doc)
+			print(f"sidebar links hide: {sidebar_name} → {sorted(hide_set)}")
+		else:
+			print(f"sidebar links already clean: {sidebar_name}")
 
 	# --- workspace card links ---
 	seen_links = {

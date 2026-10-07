@@ -98,5 +98,50 @@ frappe.ui.form.on("PMO Grant", {
 				});
 			});
 		}
+
+		frm.trigger("render_seam_assist");
+	},
+
+	render_seam_assist(frm) {
+		if (!frappe.model.can_read("GRC Obligation")) {
+			return;
+		}
+		frappe.call({
+			method: "grc_core.grc.seam.agreement_obligations.get_seam_flags",
+			callback(r) {
+				const flags = r.message || {};
+				if (!flags.suggest) {
+					return;
+				}
+				anyadha_pmo.case_hub.add_case_button(frm, "Suggest Obligations", () => {
+					frappe.call({
+						method:
+							"grc_core.grc.seam.agreement_obligations.suggest_obligations_from_agreement",
+						args: { agreement: frm.doc.name },
+						freeze: true,
+						callback(resp) {
+							const result = resp.message || {};
+							const created = result.created || [];
+							const skipped = result.skipped || [];
+							if (created.length) {
+								frappe.show_alert({
+									message: __("Created {0} Obligation(s)", [created.length]),
+									indicator: "green",
+								});
+								anyadha_pmo.case_hub.open_doc("GRC Obligation", created[0]);
+								return;
+							}
+							if (skipped.length) {
+								frappe.msgprint(
+									__("No new Obligations — conditions already linked.")
+								);
+								return;
+							}
+							frappe.msgprint(__("Add Agreement conditions before suggesting Obligations."));
+						},
+					});
+				});
+			},
+		});
 	},
 });

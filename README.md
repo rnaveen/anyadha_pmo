@@ -19,7 +19,7 @@ Anyadha Enterprise PMO application for Frappe Framework v16+ and ERPNext v16+.
 13. SOP Document Control
 14. Performance MIS *(legacy module folder — desk merged into Outcomes)*
 
-**Funding spine (U3):** one Agreement DocType (`PMO Grant`, desk label Agreement) with `agreement_type`; Project holds budget and funder child lines; Deliverable is the unified reporting artifact. Grants/CSR desks filter by type. Case hub on the Agreement form (promote from Proposal; link/create from Project). See `docs/USER_MANUAL.md`.
+**Funding spine (U3 + S8):** one Agreement DocType (`PMO Grant`, desk label Agreement) with `agreement_type`; Project holds budget and funder child lines; Deliverable is the unified reporting artifact. Grants/CSR desks filter by type. Case hub on the Agreement form (promote from Proposal; link/create from Project). Dormant Grant/CSR twin DocTypes are removed (S8 — empty-check patch; see `docs/S8_PROOF.md`). See `docs/USER_MANUAL.md`.
 
 **Strategy nesting (U4):** Company-scoped Strategic Plan with optional parent plan; Portfolio → Project nesting; Programme remains optional. See `docs/USER_MANUAL.md`.
 
